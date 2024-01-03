@@ -65,6 +65,7 @@ in
     nodejs
     python312
     pciutils
+    procps
   ];
 
   #nix = {
