@@ -19,7 +19,7 @@
 #     └── colors.nix
 # -----------------------------------------------
 
-{ lib, vars, inputs, nixpkgs-unstable, home-manager,  ... }:
+{ lib, vars, inputs, nixpkgs-unstable, home-manager, hyprland,  ... }:
 let
     system = "x86_64-linux";
 
