@@ -22,8 +22,9 @@ $ sudo nixos-rebuild switch --flake .#<user/host>
 $ nix flake update
 ```
 
-!other command
+#### other command
 ```
 home-manager generations
 nixos-rebuild list-generations
 ```
+
