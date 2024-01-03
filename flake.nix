@@ -27,32 +27,37 @@
 	nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";	
 
 	home-manager = {                                                  
-            url = "github:nix-community/home-manager";
-            inputs.nixpkgs.follows = "nixpkgs-unstable";
-        };
+        url = "github:nix-community/home-manager";
+        inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
 	# nixvim = {                                              # Neovim
 	#     url = "github:nix-community/nixvim";
 	#     inputs.nixpkgs.follows = "nixpkgs-unstable";
 	# };
+    hyprland = {
+        url = "github:hyprwm/Hyprland";
+        # build with your own instance of nixpkgs
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
 
 
   };
 
-  outputs = inputs @ { self, home-manager, nixpkgs-unstable }: 
-      let
-          vars = { 
-	      user = "rachel";
-	      version = "24.05";
-	      editor = "nvim";
-	  };
-      in
-      {
-          nixosConfigurations = (
-	      import ./hosts {
-	          inherit (nixpkgs-unstable) lib;
-		  inherit inputs nixpkgs-unstable home-manager vars;
-	      }
-	  );
-      };
+  outputs = inputs @ { self, home-manager, nixpkgs-unstable, hyprland }: 
+    let
+        vars = { 
+        user = "rachel";
+        version = "24.05";
+        editor = "nvim";
+    };
+    in
+    {
+      nixosConfigurations = (
+        import ./hosts {
+            inherit (nixpkgs-unstable) lib;
+            inherit inputs nixpkgs-unstable home-manager hyprland vars;
+        }
+      );
+    };
 }

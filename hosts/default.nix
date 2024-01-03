@@ -25,32 +25,33 @@ let
 
     unstable = import nixpkgs-unstable {
         inherit system;
-	config.allowUnfree = true;
+	    config.allowUnfree = true;
     };
 
     lib = nixpkgs-unstable.lib;
 in
 {
     rachel = lib.nixosSystem {
-	specialArgs = {
-            inherit inputs system unstable vars;
-	    host = {
-	        hostname = "nixos-phoebe";
+	    specialArgs = {
+                inherit inputs system unstable vars;
+	        host = {
+	            hostname = "nixos-phoebe";
+	        };
 	    };
-	};
-	modules = [
-	    # nixvim.nixosModules.nixvim
-	    ./rachel
-	    ./configuration.nix
+	    modules = [
+	        # nixvim.nixosModules.nixvim
+            hyprland.nixosModules.default
+	        ./rachel
+	        ./configuration.nix
 
-	    home-manager.nixosModules.home-manager {
+	        home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
-		home-manager.useUserPackages = true;
-		home-manager.users.rachel.imports = [
+	    	    home-manager.useUserPackages = true;
+	    	    home-manager.users.rachel.imports = [
                     ./rachel/home.nix
                     # nixvim.homeManagerModules.nixvim
                 ];
-	    }
-	];
+	        }
+	    ];
     };
 }
