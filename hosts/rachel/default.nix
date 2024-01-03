@@ -56,10 +56,10 @@
       nvidia.modesetting.enable = true;
   };
 
-  xdg.portal = {
-      enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-  };
+  # xdg.portal = {
+  #     enable = true;
+  #     extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  # };
 
   # packages 
   environment = {
@@ -70,7 +70,13 @@
        wayland
        rofi
        waybar
+       gnome.gdm
     ];
+  };
+
+  services.xserver.displayManager.gdm = {
+        enable = true;
+        wayland = true;
   };
 
 }
