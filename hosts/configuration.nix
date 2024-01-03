@@ -39,6 +39,8 @@ in
     # openssh.authorizedkeys.keys [ "" ];
   };
 
+  programs.fish.enable = true;
+
   environment.systemPackages = with pkgs; [
     neovim
     home-manager
