@@ -64,6 +64,7 @@ in
     libclang
     nodejs
     python312
+    pciutils
   ];
 
   #nix = {
