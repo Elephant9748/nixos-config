@@ -38,8 +38,8 @@
   # hyprland
   programs.hyprland = {
       enable = true;
-      invidiaPatches = true;
-      #xwayland.enable = true;
+      nvidiaPatches = true;
+      xwayland.enable = true;
   };
 
   environment.sessionVariables = {
