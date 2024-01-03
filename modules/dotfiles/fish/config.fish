@@ -63,6 +63,13 @@ abbr -a screen_sharing 'wf-recorder --muxer=v4l2 --codec=rawvideo --file=/dev/vi
 #wf-recorder screen_sharing portion of the screen (need install slurp)
 abbr -a screen_sharing_portion 'wf-recorder -g "$(slurp)" --muxer=v4l2 --codec=rawvideo --file=/dev/video2 -x yuv420p'
 
+#git
+abbr -a gl 'git log --all --decorate --oneline --graph'
+abbr -a gs 'git status'
+
+#nixos
+abbr -a rebuild_rachel 'sudo nixos-rebuild switch --flake .#rachel'
+
 complete --command aurman --wraps pacman
 
 if status --is-interactive
