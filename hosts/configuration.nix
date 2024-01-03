@@ -92,8 +92,8 @@ in
       registry.nixpkgs.flake = inputs.nixpkgs-unstable;
       extraOptions = ''
           experimental-features = nix-command flakes
-	  keep-outputs		= true
-	  keep-derivations	= true
+	      keep-outputs		= true
+	      keep-derivations	= true
       '';
   };
 
