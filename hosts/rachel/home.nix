@@ -14,7 +14,7 @@
     home.file.".config/hypr" = {
         source = ../../modules/dotfiles/hypr;
         recursive = true;
-    }
+    };
 
     home.stateVersion = "24.05";
 }
