@@ -1,3 +1,24 @@
+# Structur directory
+# -----------------------------------------------
+# ├── flake.lock
+# ├── flake.nix
+# ├── hosts
+# │   ├── configuration.nix
+# │   ├── default.nix
+# │   └── rachel
+# │       ├── default.nix
+# │       ├── hardware-configuration.nix
+# │       └── home.nix
+# ├── modules
+# │   ├── dotfiles
+# │   └── editors
+# │       ├── default.nix
+# │       └── nvim.nix
+# ├── README.md
+# └── theming
+#     └── colors.nix
+# -----------------------------------------------
+
 {
   description = "Nixos Rachel Flake";
 
@@ -23,7 +44,6 @@
           vars = { 
 	      user = "rachel";
 	      version = "24.05";
-	      location = "$HOME/.setup";
 	      editor = "nvim";
 	  };
       in

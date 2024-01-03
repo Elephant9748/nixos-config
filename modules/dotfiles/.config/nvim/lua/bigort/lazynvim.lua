@@ -43,8 +43,11 @@ require('lazy').setup({
              dependencies = { {'nvim-lua/plenary.nvim'} }
      },
      {
+             -- IF not working just build manual in .local/share/nvim/lazy/<name repo>
+             --
              'nvim-telescope/telescope-fzf-native.nvim', 
-             build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' 
+             -- build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' 
+             build = 'make' --
      },
      -- {'neoclide/coc.nvim', branch = 'master', build = 'yarn install --frozen-lockfile'},
      'neovim/nvim-lspconfig',  -- Configurations for Nvim LSP

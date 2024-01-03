@@ -40,7 +40,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    neovim-unwrapped
+    neovim
     home-manager
     gnupg
     vim
@@ -51,6 +51,7 @@ in
     fastfetch
     neofetch
     cmake
+    gnumake
     unzip
     gettext
     ninja
@@ -58,6 +59,11 @@ in
     unzip
     zip
     tree
+    gcc 
+    libgcc
+    libclang
+    nodejs
+    python312
   ];
 
   #nix = {
