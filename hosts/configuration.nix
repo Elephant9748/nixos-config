@@ -4,7 +4,7 @@ let
   version = "24.05";
 in
 {
-  imports = ( import ../modules/editors );
+  # imports = ( import ../modules/editors );
 
   # Set your time zone.
   time.timeZone = "Asia/Jakarta";

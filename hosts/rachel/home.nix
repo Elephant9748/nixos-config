@@ -1,9 +1,15 @@
 { pkgs, ... }: {
     home.packages = with pkgs; [ htop ];
-    home.stateVersion = "24.05";
 
-    home.file.".config/nvim" ={
-        source = ../../modules/dotfiles/.config/nvim;
+    home.file.".config/nvim" = {
+        source = ../../modules/dotfiles/nvim;
         recursive = true;
     };
+
+    home.file.".config/fish" = {
+        source = ../../modules/dotfiles/fish;
+        recursive = true;
+    };
+
+    home.stateVersion = "24.05";
 }
