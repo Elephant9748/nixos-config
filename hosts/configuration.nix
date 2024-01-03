@@ -32,11 +32,14 @@ in
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  users.users.${user} = {
-    isNormalUser = true;
-    home = "/home/rachel";
-    extraGroups = [ "wheel" "sudo" "networkmanager" ]; # Enable ‘sudo’ for the user.
-    # openssh.authorizedkeys.keys [ "" ];
+  users = { 
+   users.${user} = {
+      isNormalUser = true;
+      home = "/home/rachel";
+      extraGroups = [ "wheel" "sudo" "networkmanager" ]; # Enable ‘sudo’ for the user.
+      # openssh.authorizedkeys.keys [ "" ];
+   };
+   defaultUserShell = pkgs.fish;
   };
 
   programs.fish.enable = true;
@@ -68,6 +71,7 @@ in
     python312
     pciutils
     procps
+    eza
   ];
 
   #nix = {
