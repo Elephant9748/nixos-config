@@ -35,11 +35,16 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
-  # hyprland
-  programs.hyprland = {
-      enable = true;
-      # nvidiaPatches = true;
-      xwayland.enable = true;
+  # programs
+  programs = { 
+          # hyprland
+          hyprland = {
+              enable = true;
+              # nvidiaPatches = true;
+              xwayland.enable = true;
+          };
+          # Gnome
+          dconf.enable = true;
   };
 
   environment.sessionVariables = {
@@ -74,9 +79,16 @@
     ];
   };
 
-  services.xserver.displayManager.gdm = {
+  # Gnome
+  services.xserver = {
         enable = true;
-        wayland = true;
+        desktopManager.gnome = {
+            enable = true;
+        };
+        displayManager.gdm = {
+            enable = true;
+            wayland = true;
+        };
   };
 
 }
