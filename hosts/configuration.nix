@@ -1,8 +1,4 @@
 { config, pkgs, lib, unstable, inputs, vars,  ... }:
-let
-  user = "rachel";
-  version = "24.05";
-in
 {
   # imports = ( import ../modules/editors );
 
@@ -33,9 +29,9 @@ in
   # services.xserver.libinput.enable = true;
 
   users = { 
-   users.${user} = {
+   users.${vars.user} = {
       isNormalUser = true;
-      home = "/home/rachel";
+      home = "/home/${vars.user}";
       extraGroups = [ "wheel" "sudo" "networkmanager" ]; # Enable ‘sudo’ for the user.
       # openssh.authorizedkeys.keys [ "" ];
    };
@@ -72,6 +68,7 @@ in
     pciutils
     procps
     eza
+    meson
   ];
 
   #nix = {
@@ -145,7 +142,7 @@ in
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "${version}"; # Did you read the comment?
+  system.stateVersion = "${vars.version}"; # Did you read the comment?
 
   # home-manager.users.${user} = { pkgs, ... }: {
   #   home.packages = with pkgs; [ htop powertop ];

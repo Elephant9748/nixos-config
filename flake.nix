@@ -47,10 +47,11 @@
   outputs = inputs @ { self, home-manager, nixpkgs-unstable, hyprland }: 
     let
         vars = { 
-        user = "rachel";
-        version = "24.05";
-        editor = "nvim";
-    };
+                # changed this if using another profile
+                user = "rachel";
+                version = "24.05";
+                editor = "nvim";
+        };
     in
     {
       nixosConfigurations = (

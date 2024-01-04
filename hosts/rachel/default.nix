@@ -37,15 +37,21 @@
 
   # programs
   programs = { 
-          # hyprland
-          hyprland = {
-              enable = true;
-              # nvidiaPatches = true;
-              xwayland.enable = true;
-          };
-          # Gnome
-          dconf.enable = true;
+        # hyprland
+        hyprland = {
+            enable = true;
+            # nvidiaPatches = true;
+            xwayland.enable = true;
+        };
+
+        # Gnome
+        dconf.enable = true;
   };
+
+  # xdg.portal.enable = true;
+  # xdg.portal.extraPortals = [ 
+  #       pkgs.xdg-desktop-portal-hyprland
+  # ];
 
   environment.sessionVariables = {
       # If your cursor becomes invisible
@@ -56,15 +62,19 @@
 
   hardware = {
       # Opengl
-      opengl.enable = true;
+      # opengl = { 
+      #   enable = true; 
+      #   extraPackages = with pkgs; [
+      #       intel-media-driver
+      #       vaapiIntel
+      #       vaapiVdpau
+      #       libvdpau-va-gl
+      #   ];
+      # };
       # Most wayland compositors need this
-      nvidia.modesetting.enable = true;
+      # nvidia.modesetting.enable = true;
+      pulseaudio.enable = false;
   };
-
-  # xdg.portal = {
-  #     enable = true;
-  #     extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-  # };
 
   # packages 
   environment = {
@@ -75,7 +85,10 @@
        wayland
        rofi
        waybar
-       gnome.gdm
+       vulkan-tools
+       glxinfo
+       mesa
+       kitty
     ];
   };
 
@@ -89,6 +102,17 @@
             enable = true;
             wayland = true;
         };
+  };
+
+  # pipewire
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
   };
 
 }
