@@ -1,6 +1,11 @@
 
 ### Flake on fresh install
-structure disk `vm` `lvm not lvm on luks' :
+host:
+```
+rachel -> with desktop-*
+rigel -> cli only
+```
+structure disk on `vm` with just `lvm`:
 ```
 NAME                     MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
 sr0                       11:0    1  477M  0 rom  
