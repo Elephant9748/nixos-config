@@ -6,7 +6,7 @@ rachel -> with desktop-*
 rigel -> cli only
 ```
 
-note: change uuid `/boot', matched lvm_vol!
+note: change uuid `/boot`, matched lvm_vol!
 structure disk on `vm` with just `lvm`:
 ```
 NAME                     MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
