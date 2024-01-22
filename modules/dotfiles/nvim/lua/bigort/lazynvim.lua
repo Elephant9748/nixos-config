@@ -1,3 +1,6 @@
+-- Important buile manual in $HOME/.local/share/nvim/lazy/<repo name>
+--
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -38,16 +41,13 @@ require('lazy').setup({
      -- 'bradcush/base16-nvim',
      --
      {
-             'nvim-telescope/telescope.nvim', tag = '0.1.4',
+             'nvim-telescope/telescope.nvim', tag = '0.1.5',
              -- or                            , branch = '0.1.x',
              dependencies = { {'nvim-lua/plenary.nvim'} }
      },
      {
-             -- IF not working just build manual in .local/share/nvim/lazy/<name repo>
-             --
              'nvim-telescope/telescope-fzf-native.nvim', 
-             -- build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' 
-             build = 'make' --
+             build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' 
      },
      -- {'neoclide/coc.nvim', branch = 'master', build = 'yarn install --frozen-lockfile'},
      'neovim/nvim-lspconfig',  -- Configurations for Nvim LSP
