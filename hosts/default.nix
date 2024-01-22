@@ -81,4 +81,29 @@ in
 	    ];
     };
 
+    # with desktop (LVM on LUKS)
+    rachel_crypt = lib.nixosSystem {
+	    specialArgs = {
+                inherit inputs system unstable vars;
+	        host = {
+	            hostname = "nixos-phoebe";
+	        };
+	    };
+	    modules = [
+	        # nixvim.nixosModules.nixvim
+            hyprland.nixosModules.default
+	        ./rachel_crypt
+	        ./configuration.nix
+
+	        home-manager.nixosModules.home-manager {
+                home-manager.useGlobalPkgs = true;
+	    	    home-manager.useUserPackages = true;
+	    	    home-manager.users.rachel.imports = [
+                    ./rachel_crypt/home.nix
+                    # nixvim.homeManagerModules.nixvim
+                ];
+	        }
+	    ];
+    };
+
 }
