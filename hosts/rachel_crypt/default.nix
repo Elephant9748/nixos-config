@@ -26,7 +26,9 @@
   # plymouth boot
   boot.plymouth = {
      enable = true;
-     theme = "bgrt";
+     #theme = "bgrt";
+     theme = "cuts";
+     themePackages = [(pkgs.adi1090x-plymouth-themes.override {selected_themes = ["cuts"];})];
   };
 
   # Linux Kernel
