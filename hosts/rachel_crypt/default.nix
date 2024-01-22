@@ -23,8 +23,17 @@
      timeout = 3;
   };
 
+  # plymouth boot
+  boot.plymouth = {
+     enable = true;
+     theme = "bgrt";
+  };
+
   # Linux Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # kernel parameters
+  boot.kernelParams = ["quiet"];
 
   # initrd.kernelModules = [ "" ]; # Add kernel modules --> hardware-configuration.nix
 

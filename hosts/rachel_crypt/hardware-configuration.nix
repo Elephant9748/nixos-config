@@ -15,6 +15,11 @@
     "dm-raid"
     "dm-cache-default"
   ];
+
+  # systemd boot
+  boot.initrd.systemd.enable = true;
+
+  # LUKS
   boot.initrd.luks.devices = {
     nixcryptlvm = {
     	device = "/dev/disk/by-uuid/c8c7f2b5-0588-45ff-bac6-3f986263a7d5";

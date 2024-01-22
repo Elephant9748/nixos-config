@@ -69,6 +69,9 @@
     procps
     eza
     meson
+    # plymouth nicer full disk unlock at boot
+    plymouth
+    nixos-bgrt-plymouth
   ];
 
   #nix = {
