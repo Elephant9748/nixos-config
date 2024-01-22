@@ -67,6 +67,10 @@ abbr -a screen_sharing_portion 'wf-recorder -g "$(slurp)" --muxer=v4l2 --codec=r
 abbr -a gl 'git log --all --decorate --oneline --graph'
 abbr -a gs 'git status'
 
+#nixos
+abbr -a rebuild_rachel 'sudo nixos-rebuild switch --flake .#rachel'
+abbr -a rebuild_rigel 'sudo nixos-rebuild switch --flake .#rigel'
+
 complete --command aurman --wraps pacman
 
 if status --is-interactive
