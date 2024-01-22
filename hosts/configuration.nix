@@ -72,6 +72,7 @@
     # plymouth nicer full disk unlock at boot
     plymouth
     nixos-bgrt-plymouth
+    catppuccin-plymouth
   ];
 
   #nix = {

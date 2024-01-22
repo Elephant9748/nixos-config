@@ -34,6 +34,7 @@
 
   # kernel parameters
   boot.kernelParams = ["quiet"];
+  #boot.kernelParams = ["plymouth.enable=1"];
 
   # initrd.kernelModules = [ "" ]; # Add kernel modules --> hardware-configuration.nix
 

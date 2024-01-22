@@ -7,7 +7,7 @@ rachel -> with desktop-*
 rachel_crypt -> with desktop-*, LVM on LUKS
 rigel -> cli only
 ```
-structure disk on `vm` with just `lvm`:
+structure disk on `vm` with just `LVM`:
 ```
 NAME                     MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
 sr0                       11:0    1  477M  0 rom  
@@ -17,7 +17,7 @@ vda                      252:0    0  100G  0 disk
   └─lvm_nix_vol-nix_root 254:0    0 99.5G  0 lvm  /nix/store
                                                   /
 ```
-structure disk on `vm` with LVM on LUKS:
+structure disk on `vm` with `LVM on LUKS`:
 ```
 NAME                   MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINTS
 sr0                     11:0    1  934M  0 rom   
