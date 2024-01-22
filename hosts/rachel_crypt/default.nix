@@ -20,7 +20,7 @@
 
      };
 
-     timeout = 3;
+     timeout = 1;
   };
 
   # plymouth boot
