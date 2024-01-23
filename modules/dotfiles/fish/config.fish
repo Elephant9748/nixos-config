@@ -34,8 +34,8 @@ abbr -a .bc '$HOME/utility/clear-clipboard-wayland-hyprland'
 abbr -a .config 'cd $HOME/.config/'
 
 abbr -a .db_pinguin 'psql -h 192.168.100.144 -p 5432 db_pinguin -U stomp'
-abbr -a .nix-list 'nix-env -q'
-abbr -a .nix-update 'nix-env -u'
+#abbr -a .nix-list 'nix-env -q'
+#abbr -a .nix-update 'nix-env -u'
 #upgrade nix 
 #abbr -a .nix-env-upgrade 'nix-channel --update; nix-env --install --attr nixpkgs.nix nixpkgs.cacert; systemctl daemon-reload; systemctl restart nix-daemon'
 
