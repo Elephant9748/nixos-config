@@ -64,7 +64,7 @@
     libgcc
     libclang
     nodejs
-    #python312
+    python312
     pciutils
     procps
     eza
