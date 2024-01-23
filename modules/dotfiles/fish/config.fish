@@ -126,7 +126,7 @@ if command -v eza > /dev/null
 	abbr -a ls 'eza'
 	abbr -a ll 'eza -l'
 	abbr -a lll 'eza -la'
-    abbr -a nix 'nix-env'
+    #abbr -a nix 'nix-env'
 else
 	abbr -a l 'ls'
 	abbr -a ll 'ls -l'
