@@ -1,6 +1,11 @@
 
 ### Flake on fresh install
-##### note: change uuid `/boot`, matched lvm_vol!
+
+> [!NOTE]
+> - change uuid `/boot`, matched lvm_vol!
+> - force upgrade packages: `rm -rf flake.lock` then Flake rebuild 
+> - if sometime stuck Flake rebuild / Flake install: comment `#python312` packages
+
 host:
 ```
 rachel -> with desktop-*
